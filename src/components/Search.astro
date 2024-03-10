@@ -1,0 +1,50 @@
+---
+import SearchIcon from '@/icons/SearchIcon.astro';
+---
+
+<form class="search">
+  <input class="input" type="text" placeholder="Search">
+  <button class="btn"><SearchIcon /></button>
+</form>
+
+<style>
+  .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .btn{
+    background: var(--secundary-background);
+    height: 100%;
+    border: none;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secundary-color);
+  }
+  .btn:hover {
+    background: var(--hover-background);
+  }
+  .input{
+    position: relative;
+    z-index: 1;
+    background: var(--secundary-background);
+    font-size: 16px;
+    color: var(--gray-color);
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding-left: 1rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+  .input:focus {
+    outline: var(--border-color) solid 1px;
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Navbar from '@/components/Navbar.astro'
+---
+
+<Layout title="Welcome to Astro.">
+	<header class="header">
+		<Navbar />
+	</header>
+</Layout>
+
+<style>
+	.header {
+		height: var(--navbar-height);
+	}
+</style>
