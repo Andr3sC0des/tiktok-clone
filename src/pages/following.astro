@@ -3,6 +3,9 @@ import Layout from '@/layouts/Layout.astro'
 import Navbar from '@/components/Navbar.astro'
 import Sidebar from '@/components/Sidebar.astro'
 import Recommendation from '@/components/Recommendation.astro'
+
+// how to get the query param?
+const query = Astro.url.pathname.split('/')[1]
 ---
 
 <Layout title="TikTok - Make Your Day">
@@ -17,17 +20,17 @@ import Recommendation from '@/components/Recommendation.astro'
 			<Recommendation
 				title="Channel"
 				description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-				type="foryou"
+				type={query}
 			/>
 			<Recommendation
 				title="Channel"
 				description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-				type="foryou"
+				type={query}
 			/>
 			<Recommendation
 				title="Channel"
 				description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-				type="foryou"
+				type={query}
 			/>
 		</main>
 	</div>
