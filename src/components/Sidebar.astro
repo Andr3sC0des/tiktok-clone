@@ -1,0 +1,99 @@
+---
+import ForYouIcon from '@/icons/ForYouIcon.astro'
+import FollowingIcon from '@/icons/FollowingIcon.astro'
+import FriendsIcon from '@/icons/FriendsIcon.astro'
+import ExploreIcon from '@/icons/ExploreIcon.astro'
+import LiveIcon from '@/icons/LiveIcon.astro'
+---
+
+<section class="sidebar">
+	<ul class="list">
+		<li class="item">
+			<a class="link" href="#">
+				<div class="icon"><ForYouIcon /></div>
+				<span>For You</span>
+			</a>
+		</li>
+		<li class="item">
+			<a class="link" href="#">
+				<div class="icon"><FollowingIcon /></div>
+				<span>Following</span>
+			</a>
+		</li>
+		<li class="item">
+			<a class="link" href="#">
+				<div class="icon"><FriendsIcon /></div>
+				<span>Friends</span>
+			</a>
+		</li>
+		<li class="item">
+			<a class="link" href="#">
+				<div class="icon"><ExploreIcon /></div>
+				<span>Explore</span>
+			</a>
+		</li>
+		<li class="item">
+			<a class="link" href="#">
+				<div class="icon"><LiveIcon /></div>
+				<span>LIVE</span>
+			</a>
+		</li>
+		<li class="item profile">
+			<a class="link" href="#">
+				<div class="icon">
+					<img class="avatar" src="https://unavatar.io/github/andr3sc0des" alt="User Profile">
+				</div>
+				<span>Profile</span>
+			</a>
+		</li>
+	</ul>
+</section>
+
+<style>
+	.sidebar{
+		width: 100%;
+		height: 400px;
+	}
+	.list{
+		padding: 20px 0;
+	}
+	.item{
+		font-weight: bold;
+		font-size: 18px;
+		color: var(--main-color);
+		height: 50px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 0.7rem;
+	}
+	.item :hover {
+		background: var(--hover-background);
+	}
+	.icon{
+		width: 30px;
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.link {
+		color: var(--main-color);
+		display: flex;
+		font-weight: bold;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		padding: 0rem 1.5rem;
+		gap: 0.7rem;
+	}
+	.profile span{
+		color: var(--red-color);
+	}
+	.avatar {
+		border-radius: 50%;
+		width: 28px;
+		height: 28px;
+	}
+</style>

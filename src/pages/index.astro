@@ -1,16 +1,43 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Navbar from '@/components/Navbar.astro'
+import Sidebar from '@/components/Sidebar.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<header class="header">
-		<Navbar />
-	</header>
+<Layout title="TikTok - Make Your Day">
+	<div class="container">
+		<header class="header">
+			<Navbar />
+		</header>
+		<aside class="sidebar">
+			<Sidebar />
+		</aside>
+		<main class="content">
+			<iframe src="https://www.tiktok.com/@psicologia.practica/video/7335849694536518918?is_from_webapp=1&sender_device=pc" frameborder="0"></iframe>
+		</main>
+	</div>
 </Layout>
 
 <style>
 	.header {
-		height: var(--navbar-height);
+		height: 100%;
+		grid-area: header;
+		width: 100%;
+		background: var(--main-background);
+	}
+	.container{
+		display: grid;
+		grid-template-areas: "header header" "sidebar content";
+		grid-template-rows: var(--navbar-height);
+		grid-template-columns: var(--sidebar-width) 1fr;
+	}
+	.sidebar {
+		grid-area: sidebar;
+		width: 100%;
+	}
+	.content {
+		grid-area: content;
+		height: 400px;
+		width: 100%;
 	}
 </style>
