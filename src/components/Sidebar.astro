@@ -12,33 +12,33 @@ const query = Astro.url.pathname.split('/').at(-1)
 <section class="sidebar">
 	<ul class="list">
 		<li class="item">
-			<a class="link active" href="/">
+			<a class="link active" href="/video/1">
 				<div class="icon"><ForYouIcon /></div>
-				<span id="">For You</span>
+				<span>For You</span>
 			</a>
 		</li>
 		<li class="item">
-			<a class="link" href="following">
+			<a class="link" href="/following">
 				<div class="icon"><FollowingIcon /></div>
-				<span id="following">Following</span>
+				<span>Following</span>
 			</a>
 		</li>
 		<li class="item">
 			<a class="link" href="/friends">
 				<div class="icon"><FriendsIcon /></div>
-				<span id="friends">Friends</span>
+				<span>Friends</span>
 			</a>
 		</li>
 		<li class="item">
 			<a class="link" href="/explore">
 				<div class="icon"><ExploreIcon /></div>
-				<span id="explore">Explore</span>
+				<span>Explore</span>
 			</a>
 		</li>
 		<li class="item">
 			<a class="link" href="/live">
 				<div class="icon"><LiveIcon /></div>
-				<span id="live">LIVE</span>
+				<span>LIVE</span>
 			</a>
 		</li>
 		<li class="item">
@@ -46,7 +46,7 @@ const query = Astro.url.pathname.split('/').at(-1)
 				<div class="icon">
 					<img class="avatar" src="https://unavatar.io/github/andr3sc0des" alt="User Profile">
 				</div>
-				<span id="profile">Profile</span>
+				<span>Profile</span>
 			</a>
 		</li>
 	</ul>
@@ -56,8 +56,6 @@ const query = Astro.url.pathname.split('/').at(-1)
 
 	const allLinks = document.querySelectorAll('.link')
 	allLinks.forEach((link) => {
-		console.log(query)
-		console.log(link.href.split('/').at(-1))
 		if (link.href.split('/').at(-1) === query) {
 			link.classList.add('active')
 		} else {

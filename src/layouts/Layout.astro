@@ -15,7 +15,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+		<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -91,6 +91,13 @@ const { title } = Astro.props;
 		grid-template-rows: var(--navbar-height) 1fr;
 		grid-template-columns: var(--sidebar-width) 1fr;
 	}
+	.sidebar {
+		position: fixed;
+		top: var(--navbar-height);
+		left: 0;
+		width: var(--sidebar-width);
+		grid-area: sidebar;
+	}
 
 	.header {
 		height: var(--navbar-height);
@@ -101,16 +108,42 @@ const { title } = Astro.props;
 		top: 0;
 		left: 0;
 	}
-	.sidebar {
-		position: fixed;
-		top: var(--navbar-height);
-		left: 0;
-		width: var(--sidebar-width);
-		grid-area: sidebar;
-	}
+
 	.content {
 		grid-area: content;
 		height: 400px;
 		width: 100%;
 	}
+
+	@media (width <= 1000px) {
+		.grid{
+			grid-template-areas: "header" "content";
+			grid-template-rows: var(--navbar-height) 1fr;
+			grid-template-columns: 1fr;
+		}
+		.sidebar {
+			display: none;
+		}
+	}
+
+	@media (width <= 450px) {
+		.grid {
+			grid-template-areas: "content";
+			grid-template-rows: 1fr;
+			grid-template-columns: 1fr;
+		}
+		.header{
+			display: none;
+		}
+		.sidebar {
+			display: none;
+		}
+		.content {
+			height: 100vh;
+			height: 100svh;
+			height: 100dvh;
+			width: 100vw;
+		}
+	}
+
 </style>

@@ -26,9 +26,26 @@ const { title, description, type } = Astro.props
 		<div class="video">Video</div>
 		<div class="actions"></div>
 	</footer>
+</section>
 
-	</section>
 <style>
+	.recommendation{
+		color: var(--main-color);
+		width: 730px;
+		margin: 0 auto;
+		padding: 1rem 10px;
+		border-bottom: var(--border-color) 1px solid;
+	}
+	.video{
+		width: 315px;
+		height: 560px;
+		border-radius: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid var(--main-color);
+		color: var(--main-color);
+	}
 	.info {
 		display: flex;
 		justify-content: center;
@@ -53,13 +70,6 @@ const { title, description, type } = Astro.props
 		justify-content: space-between;
 		align-items: flex-start;
 	}
-	.recommendation{
-		color: var(--main-color);
-		width: 730px;
-		margin: 0 auto;
-		padding: 1rem 10px;
-		border-bottom: var(--border-color) 1px solid;
-	}
 	.btn{
 		background: transparent;
 		color: var(--red-color);
@@ -78,14 +88,5 @@ const { title, description, type } = Astro.props
 		justify-content: center;
 		align-items: center;
 		padding: 0.5rem;
-	}
-	.video{
-		width: 315px;
-		height: 560px;
-		border-radius: 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border: 1px solid var(--main-color);
 	}
 </style>
