@@ -1,68 +1,29 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import Navbar from '@/components/Navbar.astro'
-import Sidebar from '@/components/Sidebar.astro'
 import Recommendation from '@/components/Recommendation.astro'
 
-// how to get the query param?
 const query = Astro.url.pathname.split('/')[1]
 ---
 
 <Layout title="TikTok - Make Your Day">
-	<div class="grid">
-		<header class="header">
-			<Navbar />
-		</header>
-		<aside class="sidebar">
-			<Sidebar />
-		</aside>
-		<main class="content">
-			<Recommendation
-				title="Channel"
-				description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-				type={query}
-			/>
-			<Recommendation
-				title="Channel"
-				description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-				type={query}
-			/>
-			<Recommendation
-				title="Channel"
-				description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-				type={query}
-			/>
-		</main>
-	</div>
+	<main class="content">
+		<Recommendation
+			title="Channel"
+			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
+			type={query}
+		/>
+		<Recommendation
+			title="Channel"
+			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
+			type={query}
+		/>
+		<Recommendation
+			title="Channel"
+			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
+			type={query}
+		/>
+	</main>
 </Layout>
 
 <style>
-	.grid{
-		display: grid;
-		grid-template-areas: "header header" "sidebar content";
-		grid-template-rows: var(--navbar-height) 1fr;
-		grid-template-columns: var(--sidebar-width) 1fr;
-	}
-
-	.header {
-		height: var(--navbar-height);
-		grid-area: header;
-		width: 100%;
-		background: var(--main-background);
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
-	.sidebar {
-		position: fixed;
-		top: var(--navbar-height);
-		left: 0;
-		width: var(--sidebar-width);
-		grid-area: sidebar;
-	}
-	.content {
-		grid-area: content;
-		height: 400px;
-		width: 100%;
-	}
 </style>

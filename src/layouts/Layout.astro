@@ -1,4 +1,7 @@
 ---
+import Navbar from '@/components/Navbar.astro'
+import Sidebar from '@/components/Sidebar.astro'
+
 interface Props {
 	title: string;
 }
@@ -17,7 +20,17 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div class="grid">
+			<header class="header">
+				<Navbar />
+			</header>
+			<aside class="sidebar">
+				<Sidebar />
+			</aside>
+			<main class="content">
+				<slot />
+			</main>
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -68,5 +81,36 @@ const { title } = Astro.props;
 	}
 	ul {
 		list-style-type: none;
+	}
+</style>
+
+<style>
+	.grid{
+		display: grid;
+		grid-template-areas: "header header" "sidebar content";
+		grid-template-rows: var(--navbar-height) 1fr;
+		grid-template-columns: var(--sidebar-width) 1fr;
+	}
+
+	.header {
+		height: var(--navbar-height);
+		grid-area: header;
+		width: 100%;
+		background: var(--main-background);
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	.sidebar {
+		position: fixed;
+		top: var(--navbar-height);
+		left: 0;
+		width: var(--sidebar-width);
+		grid-area: sidebar;
+	}
+	.content {
+		grid-area: content;
+		height: 400px;
+		width: 100%;
 	}
 </style>

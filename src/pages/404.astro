@@ -1,0 +1,49 @@
+---
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout title="TikTok">
+	<div class="container">
+		<span>4</span>
+		<img src="/images/notfound.png" alt="">
+		<span>4</span>
+	</div>
+	<p class="notfound">Couldn't find this page</p>
+	<p class="more">Check out more trending videos on TikTok</p>
+	<a class="btn" href="/">Watch Now</a>
+</Layout>
+
+<style>
+	.notfound {
+		font-size: 16px;
+		color: var(--secundary-color);
+		text-align: center;
+	}
+	.more{
+		margin-top: 1rem;
+		font-size: 18px;
+		color: var(--main-color);
+		text-align: center;
+	}
+	.btn {
+		background: var(--red-color);
+		color: var(--main-color);
+		width: 300px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		margin-top: 1rem;
+
+	}
+	span {
+		font-size: 300px;
+		color: var(--main-color);
+	}
+	.container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
