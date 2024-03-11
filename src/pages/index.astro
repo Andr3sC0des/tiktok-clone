@@ -1,35 +1,105 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import Recommendation from '@/components/Recommendation.astro'
+import Video from '@/components/Video.astro'
+import MobileVideo from '@/components/MobileVideo.astro'
+import MobileNav from '@/components/MobileNav.astro'
+
+const videos = [
+	{
+		id: '_OlPnfzG-0Q',
+		title: 'Video Title 1',
+		description: 'Video Description',
+		type: 'foryou'
+	},
+	{
+		id: 'DfpRhY762ZY',
+		title: 'Video Title 2',
+		description: 'Video Description',
+		type: 'foryou'
+	},
+	{
+		id: 'fRdOeHM6mFc',
+		title: 'Video Title 3',
+		description: 'Video Description',
+		type: 'foryou'
+	}
+]
+
 ---
 
 <Layout title="TikTok - Make Your Day">
 	<main class="content">
-		<Recommendation
-			title="Channel"
-			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-			type="foryou"
-		/>
-		<Recommendation
-			title="Channel"
-			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-			type="foryou"
-		/>
-		<Recommendation
-			title="Channel"
-			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum eligendi delectus voluptate id unde deserunt nulla ipsa veritatis laboriosam, quod quibusdam illum fugiat. Aperiam, delectus. Optio totam odio reprehenderit?"
-			type="foryou"
-		/>
+		{
+			videos.map(video => (
+				<Video
+					id={video.id}
+					title={video.title}
+					description={video.description}
+					type={video.type}
+				/>
+			))
+		}
 	</main>
+
+	<section class="mobile">
+			<main class="mobile-content">
+			{
+				videos.map(video => (
+					<MobileVideo
+					id={video.id}
+					title={video.title}
+					description={video.description}
+					type={video.type}
+					/>
+					))
+				}
+			</main>
+			<footer class="mobile-footer">
+				<MobileNav/>
+			</footer>
+	</section>
 </Layout>
+
+<!-- Mobile Grid and Scroll snap -->
 <style>
-	.content {
+	.mobile {
+		display: none;
+		grid-template-areas: "mobile-content" "mobile-footer";
+		grid-template-rows:  calc(100vh - var(--mobile-nav-height)) var(--mobile-nav-height);
+		grid-template-rows:  calc(100svh - var(--mobile-nav-height)) var(--mobile-nav-height);
+		grid-template-rows:  calc(100dvh - var(--mobile-nav-height)) var(--mobile-nav-height);
+	}
+	.mobile-content {
+		grid-area: mobile-content;
+		height: calc(100vh - var(--mobile-nav-height));
+		height: calc(100svh - var(--mobile-nav-height));
+		height: calc(100dvh - var(--mobile-nav-height));
 		scroll-snap-type: y mandatory;
-		height: 100%;
-		width: 100%;
 		overflow-y: scroll;
 		scroll-behavior: smooth;
-		scroll-snap-points-y: repeat(100vh);
+	}
+
+	.mobile-footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		grid-area: mobile-footer;
+		width: 100%;
+		height: var(--mobile-nav-height);
+		background: #000000;
+	}
+
+	@media ( width <= 450px) {
+		.mobile {
+			display: grid;
+		}
+	}
+</style>
+
+<style>
+	.content {
+		height: 100%;
+		width: 100%;
 	}
 	.content::-webkit-scrollbar {
 		display: none;
@@ -37,5 +107,11 @@ import Recommendation from '@/components/Recommendation.astro'
 	.content {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
+	}
+
+	@media ( width <= 450px) {
+		.content {
+			display: none;
+		}
 	}
 </style>

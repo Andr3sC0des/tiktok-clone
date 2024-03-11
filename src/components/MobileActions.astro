@@ -1,0 +1,69 @@
+---
+import LikeIcon from '@/icons/LikeIcon.astro'
+import CommentsIcon from '@/icons/CommentsIcon.astro'
+import ShareIcon from '@/icons/ShareIcon.astro'
+import PlusIcon from '@/icons/PlusIcon.astro'
+---
+
+<section class="actions">
+	<ul class="list">
+		<li class="item">
+			<i class="icon"><img class="avatar" src="https://avatars.githubusercontent.com/u/115658159" alt=""> </i>
+			<i class="add"><PlusIcon /> </i>
+		</li>
+		<li class="item">
+			<i class="icon"><LikeIcon /></i>
+			<span class="text">707.1K</span>
+		</li>
+		<li class="item">
+			<i class="icon"><CommentsIcon /></i>
+			<span class="text">11.7K</span>
+		</li>
+		<li class="item">
+			<i class="icon"><ShareIcon /></i>
+			<span class="text">8094</span>
+		</li>
+	</ul>
+</section>
+
+<style>
+	.actions {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: #fff;
+	}
+	.list {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1.8rem;
+	}
+	.item{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+	.avatar {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		border: 1px solid #fff;
+	}
+	.add {
+		position: absolute;
+		top: 35px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

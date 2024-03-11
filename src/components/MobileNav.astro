@@ -1,0 +1,77 @@
+---
+import HomeIcon from '@/icons/HomeIcon.astro'
+import AddIcon from '@/icons/AddIcon.astro'
+import ExploreIcon from '@/icons/ExploreIcon.astro'
+import InboxIcon from '@/icons/InboxIcon.astro'
+import ProfileIcon from '@/icons/ProfileIcon.astro'
+---
+
+<nav class="nav">
+	<ul class="list">
+		<li class="item">
+			<a href="/" class="link">
+				<i class="icon"><HomeIcon /> </i>
+				<span class="text">Home</span>
+			</a>
+		</li>
+		<li class="item">
+			<a href="/" class="link">
+				<i class="icon"><ExploreIcon /> </i>
+				<span class="text">Discover</span>
+			</a>
+		</li>
+		<li class="item">
+			<a href="/" class="link">
+					<i class="icon"><AddIcon/></i>
+			</a>
+		</li>
+		<li class="item">
+			<a href="/" class="link">
+				<i class="icon"><InboxIcon width="24px" height="24px" /> </i>
+				<span class="text">Inbox</span>
+			</a>
+		</li>
+		<li class="item">
+			<a href="/" class="link">
+				<i class="icon"><ProfileIcon /> </i>
+				<span class="text">Profile</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<style>
+	.nav {
+		height: var(--mobile-nav-height);
+		width: 100%;
+		margin: 0 auto;
+		padding: 0px 24px;
+	}
+	.list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: var(--mobile-nav-height);
+		color: #fff;
+	}
+	.text{
+		font-size: 10px;
+	}
+	.new {
+		position: relative;
+		border-radius: 0.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.5rem;
+		height: 1.2rem;
+		padding: 0.2rem;
+	}
+
+</style>

@@ -1,11 +1,13 @@
 ---
+import PlayIcon from '@/icons/PlayIcon.astro'
 interface Props {
+	id: string;
 	title: string;
 	description: string;
 	type: string;
 }
 
-const { title, description, type } = Astro.props
+const { id, title, description, type } = Astro.props
 ---
 
 <section class="recommendation">
@@ -24,16 +26,11 @@ const { title, description, type } = Astro.props
 
 	<footer class="footer">
 		<div class="video">
-			<img src="https://via.placeholder.com/315x560" alt="Video">
+			<img class="img" src=`https://i.ytimg.com/vi_webp/${id}/maxresdefault.webp` alt={title}>
+			<i class="play"><PlayIcon /></i>
 		</div>
 		<div class="actions"></div>
 	</footer>
-</section>
-
-<section class="mobile">
-	<div class="video">
-		<h1>Video</h1>
-	</div>
 </section>
 
 <style>
@@ -45,15 +42,20 @@ const { title, description, type } = Astro.props
 		border-bottom: var(--border-color) 1px solid;
 	}
 	.video{
+		position: relative;
 		width: 315px;
 		height: 560px;
 		border-radius: 1rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: 1px solid var(--main-color);
 		color: var(--main-color);
 		overflow: hidden;
+	}
+	.img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 	.info {
 		display: flex;
@@ -98,26 +100,14 @@ const { title, description, type } = Astro.props
 		align-items: center;
 		padding: 0.5rem;
 	}
-	.mobile {
-		display: none;
-	}
-	@media screen and (width <= 450px){
-		.recommendation{
-			display: none;
-		}
-		.mobile {
-			display: block;
-			width: 100vw;
-			height: 100vh;
-			height: 100svh;
-			height: 100dvh;
-			scroll-snap-align: start;
-		}
-		.video {
-			width: 100%;
-			height: 100%;
-			background: #1f1f1f;
-			color: #fff;
-		}
+	.play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: rgba(255, 255, 255, 0.75);
 	}
 </style>
