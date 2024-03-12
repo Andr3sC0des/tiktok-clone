@@ -1,4 +1,5 @@
 ---
+import MobileSidebar from '@/components/MobileSidebar.astro'
 import Navbar from '@/components/Navbar.astro'
 import Sidebar from '@/components/Sidebar.astro'
 
@@ -27,6 +28,9 @@ const { title } = Astro.props;
 			<aside class="sidebar">
 				<Sidebar />
 			</aside>
+			<aside class="mobile-sidebar">
+				<MobileSidebar />
+			</aside>
 			<main class="content">
 				<slot />
 			</main>
@@ -46,6 +50,7 @@ const { title } = Astro.props;
 		--red-color: #fe2c55;
 		--gray-color: #5c5c5c;
 		--mobile-nav-height: 40px;
+		--mobile-sidebar-width: 70px;
 	}
 
 	[data-theme="dark"] {
@@ -60,6 +65,7 @@ const { title } = Astro.props;
 		--red-color: #ff3b5c;
 		--gray-color: rgba(255, 255, 255, 0.9);
 		--mobile-nav-height: 40px;
+		--mobile-sidebar-width: 70px;
 	}
 
 	@font-face {
@@ -73,6 +79,7 @@ const { title } = Astro.props;
 		margin: 0;
 		box-sizing: border-box;
 		font-family: TikTok, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	}
 	html {
 		background: var(--main-background);
@@ -111,6 +118,19 @@ const { title } = Astro.props;
 		left: 0;
 		z-index: 1;
 	}
+	.mobile-sidebar {
+		display: none;
+		position: fixed;
+		height: calc(100vh - var(--navbar-height));
+		height: calc(100svh - var(--navbar-height));
+		height: calc(100dvh - var(--navbar-height));
+		top: var(--navbar-height);
+		left: 0
+		width: var(--mobile-sidebar-width);
+		background: var(--main-background);
+		z-index: 1;
+		grid-area: mobile-sidebar;
+	}
 
 	.content {
 		grid-area: content;
@@ -120,15 +140,19 @@ const { title } = Astro.props;
 
 	@media (width <= 1000px) {
 		.grid{
-			grid-template-areas: "header" "content";
+			grid-template-areas: "header header" "mobile-sidebar content";
 			grid-template-rows: var(--navbar-height) 1fr;
-			grid-template-columns: 1fr;
+			grid-template-columns: var(--mobile-sidebar-width) 1fr;
 		}
 		.sidebar {
 			display: none;
 		}
 	}
-
+	@media (width >= 450px) and (width <= 1000px){
+		.mobile-sidebar {
+			display: block;
+		}
+	}
 	@media (width <= 450px) {
 		.grid {
 			grid-template-areas: "content";

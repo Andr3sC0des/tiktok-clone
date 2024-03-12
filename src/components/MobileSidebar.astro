@@ -1,0 +1,73 @@
+---
+import ExploreIcon from '@/icons/ExploreIcon.astro'
+import FollowingIcon from '@/icons/FollowingIcon.astro'
+import FriendsIcon from '@/icons/FriendsIcon.astro'
+import HomeIcon from '@/icons/HomeIcon.astro'
+import LiveIcon from '@/icons/LiveIcon.astro'
+import ProfileIcon from '@/icons/ProfileIcon.astro';
+
+---
+
+<section class="sidebar">
+	<ul class="list">
+		<li class="item">
+			<a href="" class="link">
+				<i class="icon"><HomeIcon width="32" height="32" /></i>
+			</a>
+		</li>
+		<li class="item">
+			<a href="" class="link">
+				<i class="icon"><FollowingIcon width="32" height="32" /></i>
+			</a>
+		</li>
+		<li class="item">
+			<a href="" class="link">
+				<i class="icon"><FriendsIcon width="32" height="32" /></i>
+			</a>
+		</li>
+		<li class="item">
+			<a href="" class="link">
+				<i class="icon"><ExploreIcon width="32" height="32" /></i>
+			</a>
+		</li>
+		<li class="item">
+			<a href="" class="link">
+				<i class="icon"><LiveIcon width="32" height="32" /></i>
+			</a>
+		</li>
+		<li class="item">
+			<a href="" class="link">
+				<i class="icon"><ProfileIcon width="32" height="32" /></i>
+			</a>
+		</li>
+	</ul>
+</section>
+
+<style>
+	.sidebar{
+		height: 100%;
+		width: var(--mobile-sidebar-width);
+		border: var(--border-color) 1px solid;
+	}
+	.selected {
+		color: var(--red-color);
+		fill: var(--red-color);
+	}
+	.list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.link {
+		padding: 0.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+	svg {
+		width: 50px;
+		height: 50px;
+	}
+</style>
