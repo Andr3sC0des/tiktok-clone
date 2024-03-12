@@ -38,7 +38,7 @@ This TikTok clone is a challenging project aimed at replicating some of the feat
 
 ## Preview
 
-If you want to see working demo of the application (In Construction...)
+If you want to see working demo of the application https://tiktok-clone-ebon-delta.vercel.app/
 
 ## Getting Started
 
