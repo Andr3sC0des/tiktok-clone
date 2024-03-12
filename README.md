@@ -20,11 +20,11 @@ This TikTok clone is a challenging project aimed at replicating some of the feat
 ## SEO Analytics
 
 ### Mobile Analytics 
-<a href=""><img src=".github/images/mobile-analytics.png"></a>
+<a href="https://pagespeed.web.dev/analysis/https-tiktok-clone-ebon-delta-vercel-app/cnxbyuiwqt?form_factor=mobile"><img src=".github/images/mobile-analytics.png"></a>
 
 ### Desktop Analytics
 
-<a href=""><img src=".github/images/desktop-analytics.png"></a>
+<a href="https://pagespeed.web.dev/analysis/https-tiktok-clone-ebon-delta-vercel-app/cnxbyuiwqt?form_factor=desktop"><img src=".github/images/desktop-analytics.png"></a>
 
 ## Screenshots
 
