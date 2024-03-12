@@ -21,7 +21,7 @@ const { id, title, description, type } = Astro.props
 				<p class="description">{description}</p>
 			</article>
 		</div>
-			{type === 'foryou' ? <button class="btn">Follow</button> : ''}
+			{type === 'foryou' ? <button aria-label="Follow this channel" class="btn">Follow</button> : ''}
 	</header>
 
 	<footer class="footer">

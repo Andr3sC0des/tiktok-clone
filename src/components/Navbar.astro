@@ -9,7 +9,7 @@ import Search from '@/components/Search.astro'
 
 <nav class="navbar">
 	<div class="logo">
-		<a class="home" href="/">
+		<a aria-label="Tiktok Logo" class="home" href="/">
 			<TikTokIcon />
 		</a>
 	</div>
@@ -17,9 +17,9 @@ import Search from '@/components/Search.astro'
 		<Search />
 	</div>
 	<div class="info">
-		<button class="upload"><UploadIcon class="icon" /> Upload</button>
-		<button class="icon"><MessageIcon width="24px" height="24px" /> </button>
-		<button class="icon"><InboxIcon width="32px" height="32px" /> </button>
+		<button aria-label="Upload a Video" class="upload"><UploadIcon class="icon" /> Upload</button>
+		<button aria-label="Your Messages" class="icon"><MessageIcon width="24px" height="24px" /> </button>
+		<button aria-label="Your Inbox" class="icon"><InboxIcon width="32px" height="32px" /> </button>
 		<div class="profile">
 			<img class="avatar" src="https://unavatar.io/github/andr3sc0des" alt="User Profile">
 			<div class="menu">

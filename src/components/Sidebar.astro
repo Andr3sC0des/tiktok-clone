@@ -12,37 +12,37 @@ const query = Astro.url.pathname.split('/').at(-1)
 <section class="sidebar">
 	<ul class="list">
 		<li class="item">
-			<a class="link active" href="/">
+			<a aria-label="Videos for you" class="link active" href="/">
 				<div class="icon"><ForYouIcon /></div>
 				<span>For You</span>
 			</a>
 		</li>
 		<li class="item">
-			<a class="link" href="/following">
+			<a aria-label="Videos you follow" class="link" href="/following">
 				<div class="icon"><FollowingIcon /></div>
 				<span>Following</span>
 			</a>
 		</li>
 		<li class="item">
-			<a class="link" href="/friends">
+			<a aria-label="Your friends" class="link" href="/friends">
 				<div class="icon"><FriendsIcon /></div>
 				<span>Friends</span>
 			</a>
 		</li>
 		<li class="item">
-			<a class="link" href="/explore">
+			<a aria-label="Discover more videos" class="link" href="/explore">
 				<div class="icon"><ExploreIcon /></div>
 				<span>Explore</span>
 			</a>
 		</li>
 		<li class="item">
-			<a class="link" href="/live">
+			<a aria-label="Live videos" class="link" href="/live">
 				<div class="icon"><LiveIcon /></div>
 				<span>LIVE</span>
 			</a>
 		</li>
 		<li class="item">
-			<a class="link" href="/profile">
+			<a aria-label="View your profile" class="link" href="/profile">
 				<div class="icon">
 					<img class="avatar" src="https://unavatar.io/github/andr3sc0des" alt="User Profile">
 				</div>
