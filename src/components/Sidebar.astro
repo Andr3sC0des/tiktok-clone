@@ -4,9 +4,6 @@ import FollowingIcon from '@/icons/FollowingIcon.astro'
 import FriendsIcon from '@/icons/FriendsIcon.astro'
 import ExploreIcon from '@/icons/ExploreIcon.astro'
 import LiveIcon from '@/icons/LiveIcon.astro'
-
-const query = Astro.url.pathname.split('/').at(-1)
-
 ---
 
 <section class="sidebar">
@@ -52,8 +49,8 @@ const query = Astro.url.pathname.split('/').at(-1)
 	</ul>
 </section>
 
-<script is:inline define:vars={{ query }}>
-
+<script is:inline>
+	const query = window.location.pathname.split('/').at(-1)
 	const allLinks = document.querySelectorAll('.link')
 	allLinks.forEach((link) => {
 		if (link.href.split('/').at(-1) === query) {
