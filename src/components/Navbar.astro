@@ -34,22 +34,29 @@ import Search from '@/components/Search.astro'
 <script>
 	import debounce from 'just-debounce-it'
 
-const profile = document.querySelector('.profile')
+	const profile = document.querySelector('.profile')
 	const menu = document.querySelector < HTMLElement > ('.menu')
 
 	const handleMouseEnter = () => {
 		if (!menu) return
-		menu.style.display = 'block'
+		menu.classList.add('show')
 		handleMouseOut.cancel()
 	}
 	const onMouseLeave = () => {
 		if (!menu) return
-		menu.style.display = 'none'
+		menu.classList.remove('show')
 	}
+
+	const handleMenu = () => {
+		if (!menu) return
+		menu.classList.toggle('show')
+	}
+
 	const handleMouseOut = debounce(onMouseLeave, 700)
 
 		profile?.addEventListener('mouseenter', handleMouseEnter)
 		profile?.addEventListener('mouseleave', handleMouseOut)
+		profile?.addEventListener('touchstart', handleMenu)
 </script>
 
 <style>
@@ -63,6 +70,9 @@ const profile = document.querySelector('.profile')
 		width: 100%;
 		border-bottom: 1px solid var(--border-color);
 		gap: 0.5rem;
+	}
+	.show {
+		display: block !important;
 	}
 	.logo{
 		width: 300px;
