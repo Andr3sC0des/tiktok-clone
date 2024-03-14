@@ -2,4 +2,7 @@ node_modules
 pnpm-lock.yaml
 TODO.md
 package-lock.json
-
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
