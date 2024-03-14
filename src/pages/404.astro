@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout.astro'
 <Layout title="TikTok">
 	<div class="container">
 		<span>4</span>
-		<img src="/images/notfound.png" alt="">
+		<img class="image" src="/images/notfound.png" alt="">
 		<span>4</span>
 	</div>
 	<p class="notfound">Couldn't find this page</p>
@@ -15,7 +15,6 @@ import Layout from '@/layouts/Layout.astro'
 
 <style>
 	.notfound {
-		font-size: 16px;
 		color: var(--secundary-color);
 		text-align: center;
 	}
@@ -35,10 +34,12 @@ import Layout from '@/layouts/Layout.astro'
 		align-items: center;
 		margin: 0 auto;
 		margin-top: 1rem;
-
+	}
+	.image {
+		width: 300px;
 	}
 	span {
-		font-size: 300px;
+		font-size: 200px;
 		color: var(--main-color);
 	}
 	.container{
@@ -46,4 +47,13 @@ import Layout from '@/layouts/Layout.astro'
 		justify-content: center;
 		align-items: center;
 	}
+	@media screen and (width <= 768px) {
+		.image {
+			width: 200px;
+		}
+		span {
+			font-size: 100px;
+		}
+	}
+
 </style>
