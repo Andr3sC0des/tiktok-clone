@@ -3,54 +3,37 @@ import Layout from '@/layouts/Layout.astro'
 import Video from '@/components/Video.astro'
 import MobileVideo from '@/components/MobileVideo.astro'
 import MobileNav from '@/components/MobileNav.astro'
-
-const videos = [
-	{
-		id: '_OlPnfzG-0Q',
-		title: 'Video Title 1',
-		description: 'Video Description',
-		type: 'foryou'
-	},
-	{
-		id: 'DfpRhY762ZY',
-		title: 'Video Title 2',
-		description: 'Video Description',
-		type: 'foryou'
-	},
-	{
-		id: 'fRdOeHM6mFc',
-		title: 'Video Title 3',
-		description: 'Video Description',
-		type: 'foryou'
-	}
-]
-
+import MockVideos from '@/db/MockVideos.json'
 ---
 
 <Layout title="TikTok - Make Your Day">
 	<main class="content">
 		{
-			videos.map(video => (
-				<Video
-					id={video.id}
-					title={video.title}
-					description={video.description}
-					type={video.type}
-				/>
+			MockVideos.map(channel => (
+				channel.shorts.map(short => (
+					<Video
+						id={short.id}
+						title={short.title}
+						description={short.description}
+						channel={channel.name}
+					/>
+				))
 			))
 		}
 	</main>
 
 	<section class="mobile">
 			<main class="mobile-content">
-			{
-				videos.map(video => (
-					<MobileVideo
-					id={video.id}
-					title={video.title}
-					description={video.description}
-					type={video.type}
-					/>
+				{
+					MockVideos.map(channel => (
+						channel.shorts.map(short => (
+							<MobileVideo
+								id={short.id}
+								title={short.title}
+								description={short.description}
+								channel={channel.name}
+							/>
+						))
 					))
 				}
 			</main>

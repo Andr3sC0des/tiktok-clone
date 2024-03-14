@@ -4,24 +4,24 @@ interface Props {
 	id: string;
 	title: string;
 	description: string;
-	type: string;
+	channel: string;
 }
 
-const { id, title, description, type } = Astro.props
+const { id, title, description, channel } = Astro.props
 ---
 
 <section class="recommendation">
 	<header class="header">
 		<div class="info">
 			<div class="profile">
-				<img class="avatar" src="https://avatars.githubusercontent.com/u/115658159" alt="User Profile">
+				<img class="avatar" src={`https://unavatar.io/youtube/${channel}`} alt="User Profile">
 			</div>
 			<article class="details">
 				<h2 class="channel">{title}</h2>
 				<p class="description">{description}</p>
 			</article>
 		</div>
-			{type === 'foryou' ? <button aria-label="Follow this channel" class="btn">Follow</button> : ''}
+			<button aria-label="Follow this channel" class="btn">Follow</button>
 	</header>
 
 	<footer class="footer">

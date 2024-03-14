@@ -3,12 +3,14 @@ import LikeIcon from '@/icons/LikeIcon.astro'
 import CommentsIcon from '@/icons/CommentsIcon.astro'
 import ShareIcon from '@/icons/ShareIcon.astro'
 import PlusIcon from '@/icons/PlusIcon.astro'
+
+const { channel } = Astro.props
 ---
 
 <section class="actions">
 	<ul class="list">
 		<li class="item">
-			<i class="icon"><img class="avatar" src="https://avatars.githubusercontent.com/u/115658159" alt=""> </i>
+			<i class="icon"><img class="avatar" src={`https://unavatar.io/youtube/${channel}`} alt={`Channel avatar image for ${channel}`}> </i>
 			<i class="add"><PlusIcon /> </i>
 		</li>
 		<li class="item">

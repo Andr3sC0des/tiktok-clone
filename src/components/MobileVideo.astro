@@ -6,17 +6,17 @@ interface Props {
 	id: string;
 	title: string;
 	description: string;
-	type: string;
+	channel: string;
 }
 
-const { id, title, description, type } = Astro.props // eslint-disable-line
+const { id, title, description, channel } = Astro.props // eslint-disable-line
 ---
 
 <section class="video">
 	<img class="img" src=`https://i.ytimg.com/vi_webp/${id}/hqdefault.webp` alt={title}>
 	<i class="play"><PlayIcon /></i>
 	<div class="actions">
-		<MobileActions />
+		<MobileActions channel={channel} />
 	</div>
 </section>
 
